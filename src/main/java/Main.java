@@ -9,9 +9,15 @@ public class Main {
 
         System.out.println("Введите название и скорость 3-х автомобилей.");
         for (int i = 1; i <= 3; i++) {
-            System.out.println("Название авто №" + i);
-            name = scanner.next();
-
+            while (true) {
+                System.out.println("Название авто №" + i);
+                name = scanner.nextLine().trim();
+                if (!name.isEmpty()) {
+                    break;
+                } else {
+                    System.out.println("Ошибка! \nНазвание не может быть пустым.");
+                }
+            }
             while (true) {
                 System.out.println("Введите скорость авто №" + i + " (от 0 до 250)");
 
